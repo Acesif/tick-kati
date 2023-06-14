@@ -23,9 +23,20 @@
   color: var(--pale-bg);
   list-style: none;
 }
-* .App .sidebar h1 {
+* .App .sidebar .heading {
   padding-left: 20%;
   padding-right: 10%;
+  display: flex;
+  align-items: center;
+}
+* .App .sidebar #icon {
+  width: 80px;
+  height: 80px;
+  margin-left: -10px;
+  transform: rotate(45deg);
+}
+* .App .sidebar h1 {
+  position: absolute;
 }
 * .App .sidebar .categories {
   margin-top: 1.25rem;
@@ -47,4 +58,19 @@
 * .App .content {
   min-width: 100vh;
   color: var(--blue-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+* .App .content h1 {
+  position: absolute;
+  top: 1.25rem;
+  letter-spacing: 5px;
+  transform: scale(1.2);
+  text-transform: uppercase;
+}
+* .App .content .table-container {
+  margin-top: -20rem;
 }/*# sourceMappingURL=App.css.map */

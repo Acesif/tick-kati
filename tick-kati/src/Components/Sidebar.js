@@ -4,7 +4,10 @@ const Sidebar = () => {
   const sidebarSections = ['Dashboard','My Ticket','My Profile','Users','Assets','Tickets Type','Tickets Queue']
   return (
     <div className='sidebar'>
-        <h1>Tick-kati</h1>
+        <div className="heading">
+            <img id='icon' src="favicon.ico" alt='icon'/>
+            <h1>Tick-kati</h1>
+        </div>
         <div className="categories">
         {
             sidebarSections.map(item=>(
