@@ -6,8 +6,44 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
     .App{
         min-width: 100%;
         min-height: 100vh;
+        background-color: var(--pale-bg);
+        .sidebar{
+            padding-top: 15%;
+            min-height: 100vh;
+            background-color: var(--blue-bg);
+            color: var(--pale-bg);
+            list-style: none;
+            h1{
+                padding-left: 20%;
+                padding-right: 10%;
+            }
+            .categories{
+                margin-top: 1.25rem;
+            }
+            li{
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding-left: 20%;
+                padding-right: 10%;
+                padding-top: 0.8rem;
+                padding-bottom: 0.8rem;
+                font-size: 1.4375rem;
+                margin-top: 1.25rem;
+            }
+            .Type{
+               background-color:#4e63cf ;
+            }
+        }
+        .content{
+            min-width: 100vh;
+            color: var(--blue-bg);
+        }
+        display: grid;
+        grid-template-columns: 1fr 5fr;
     }
 }
