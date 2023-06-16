@@ -105,7 +105,71 @@
   gap: 1rem;
   align-items: center;
 }
-* .App .content .header .btn {
+
+.ticket-form {
+  z-index: 2;
+  width: 450px;
+  height: 300px;
+  background-color: var(--blue-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 10px;
+  border-radius: 20px;
+  position: relative;
+}
+.ticket-form .form-input {
+  width: 100%;
+  justify-content: space-evenly;
+  display: flex;
+}
+.ticket-form .form-input p {
+  font-size: 20px;
+  margin-top: -5px;
+  color: var(--pale-bg);
+}
+.ticket-form .form-input input, .ticket-form .form-input textarea {
+  margin-bottom: 20px;
+  width: 280px;
+  padding: 3px;
+}
+.ticket-form .form-input textarea {
+  resize: vertical;
+  height: 3.125rem;
+  min-height: 3.125rem;
+  max-height: 6.25rem;
+}
+.ticket-form button {
+  padding: 1rem 2rem;
+  font-size: 14px;
+}
+.ticket-form .button-cta {
+  display: flex;
+  width: 90%;
+  gap: 10px;
+  justify-content: end;
+  position: absolute;
+  bottom: 1.875rem;
+}
+.ticket-form .button-cta .cancel {
+  background-color: var(--blue-bg);
+  color: var(--pale-bg);
+  transition: border 200ms ease-in-out;
+}
+.ticket-form .button-cta .cancel:hover {
+  border: 1px solid brown;
+}
+.ticket-form .button-cta .submit {
+  background-color: #33b249;
+  color: var(--pale-bg);
+}
+.ticket-form .button-cta .submit:hover {
+  background-color: var(--blue-bg);
+  color: var(--pale-bg);
+  border: 1px solid var(--pale-bg);
+}
+
+.btn {
   padding: 0.5rem 1rem;
   background-color: var(--pale-bg);
   border: 1px solid var(--blue-bg);
@@ -115,7 +179,9 @@
   cursor: pointer;
   text-transform: uppercase;
 }
-* .App .content .header .btn:hover {
+
+.btn:hover {
   background-color: var(--blue-bg);
   color: var(--pale-bg);
+  border: 1px solid var(--pale-bg);
 }/*# sourceMappingURL=App.css.map */

@@ -11,7 +11,7 @@ const Sidebar = () => {
         <div className="categories">
         {
             sidebarSections.map(item=>(
-                <li className={item}>{item}</li>
+                <li key={item} className={item}>{item}</li>
             ))
         }
         </div>

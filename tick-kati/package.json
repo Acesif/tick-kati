@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "@klarr-agency/circum-icons-react": "^2.0.1",
     "sass": "^1.63.4"
   }
 }
