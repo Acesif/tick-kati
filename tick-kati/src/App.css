@@ -57,7 +57,7 @@
   background-color: rgb(78, 99, 207);
 }
 * .App .content {
-  min-width: 100vh;
+  min-height: 100vh;
   color: var(--blue-bg);
   display: flex;
   flex-direction: column;
@@ -196,6 +196,20 @@
   background-color: var(--blue-bg);
   color: var(--pale-bg);
   border: 1px solid var(--pale-bg);
+}
+
+@media (max-width: 1080px) {
+  .sidebar .categories li {
+    font-size: 15px;
+  }
+  .content .table-container {
+    left: 200px;
+    font-size: 15px;
+    width: 100%;
+  }
+  .content .table-container th, .content .table-container td {
+    padding: 1rem 6rem;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
