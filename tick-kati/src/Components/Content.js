@@ -20,7 +20,14 @@ const Content = () => {
         setEdit(true)
     }
     const handleUpdate = (updatedTicket,updatedDesc) => {
-        console.log(updatedTicket,updatedDesc);
+        const updated = tickets.map(e=>{
+            if(e.id === Number(currentUpdate)){
+                tickets[currentUpdate].ticket_type = updatedTicket
+                tickets[currentUpdate].description = updatedDesc
+            }
+            return e
+        })
+        setTickets(updated)
         const overlay = document.querySelector(".overlay")
         overlay.classList.remove("show")
         setEdit(false)
