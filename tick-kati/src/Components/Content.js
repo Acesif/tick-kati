@@ -1,13 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import CircumIcon from '@klarr-agency/circum-icons-react'
+import UpdateTicket from './UpdateTicket';
 
 const Content = () => {
     const [formshow,setFormShow] = useState(false);
     const [tickets,setTickets] = useState([]);
+    const [edit,setEdit] = useState(false)
+    const [currentUpdate,setCurrentUpdate] = useState(null)
     const addTicket = () => {
         const overlay = document.querySelector(".overlay")
         overlay.classList.add("show")
         setFormShow(true)
+    }
+    const handleEdit = (e) => {
+        const overlay = document.querySelector(".overlay")
+        overlay.classList.add("show")
+        const editID = e.target.parentNode.id
+        setCurrentUpdate(editID)
+        setEdit(true)
+    }
+    const handleUpdate = (updatedTicket,updatedDesc) => {
+        console.log(updatedTicket,updatedDesc);
+        const overlay = document.querySelector(".overlay")
+        overlay.classList.remove("show")
+        setEdit(false)
+    }
+    const handleDelete = (e) => {
+        const deleteID = e.target.parentNode.id;
+        if(tickets.length === 1){
+            localStorage.clear("tickets")
+            setTickets([])
+        }
+        else{
+            const deletedTickets = tickets.filter(e=>{
+                return e.id !== Number(deleteID)
+            })
+            setTickets(deletedTickets)
+        }
     }
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -37,6 +66,7 @@ const Content = () => {
     const handleCancel = (e) => {
         e.preventDefault();
         setFormShow(false)
+        setEdit(false)
         const overlay = document.querySelector(".overlay")
         overlay.classList.remove("show")
     }
@@ -63,6 +93,7 @@ const Content = () => {
                 </div>
             </form>
         }
+        {edit && <UpdateTicket currentNode={tickets[currentUpdate]} handleCancel={handleCancel} handleUpdate={handleUpdate}/>}
         <div className='table-container'>
             <table className="table table-dark table-striped-columns">
                 <thead>
@@ -74,14 +105,18 @@ const Content = () => {
                 </thead>
                 {
                     tickets.map((e)=>(
-                        <tbody>
+                        <tbody key={e.id}>
                             <tr>
                             <td>{e.ticket_type}</td>
                             <td>{e.description}</td>
                             <td>
-                                <div className="actions">
-                                    <CircumIcon name="edit"/>
-                                    <CircumIcon name="trash"/>
+                                <div id={e.id} className="actions">
+                                    <div onClick={(e)=>handleEdit(e)} className="edit">
+                                        <CircumIcon name="edit"/>
+                                    </div>
+                                    <div onClick={(e)=>handleDelete(e)} className="delete">
+                                        <CircumIcon name="trash"/>
+                                    </div>
                                 </div>
                             </td>
                             </tr>
@@ -93,5 +128,4 @@ const Content = () => {
     </div>
   )
 }
-
 export default Content

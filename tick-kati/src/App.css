@@ -94,6 +94,16 @@
   position: fixed;
   top: 20%;
 }
+* .App .content .table-container .actions {
+  display: flex;
+  gap: 10px;
+}
+* .App .content .table-container .actions .edit > * {
+  pointer-events: none;
+}
+* .App .content .table-container .actions .delete > * {
+  pointer-events: none;
+}
 * .App .content .header {
   position: absolute;
   top: 1.25rem;
@@ -162,6 +172,8 @@
 .ticket-form .button-cta .submit {
   background-color: #33b249;
   color: var(--pale-bg);
+  display: flex;
+  align-items: center;
 }
 .ticket-form .button-cta .submit:hover {
   background-color: var(--blue-bg);
@@ -184,4 +196,6 @@
   background-color: var(--blue-bg);
   color: var(--pale-bg);
   border: 1px solid var(--pale-bg);
-}/*# sourceMappingURL=App.css.map */
+}
+
+/*# sourceMappingURL=App.css.map */

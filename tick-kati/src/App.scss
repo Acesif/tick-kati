@@ -89,6 +89,16 @@
             .table-container{
                 position: fixed;
                 top: 20%;
+                .actions{
+                    display: flex;
+                    gap: 10px;
+                    .edit>*{
+                        pointer-events: none;
+                    }
+                    .delete>*{
+                        pointer-events: none;
+                    }
+                }
             }
             .header{
                 position: absolute;
@@ -160,6 +170,8 @@
         .submit{
             background-color: #33b249;
             color: var(--pale-bg);
+            display: flex;
+            align-items: center;
         }
         .submit:hover{
             background-color: var(--blue-bg);
